@@ -3,7 +3,6 @@ import numpy as np
 import random
 from datetime import datetime, timedelta
 
-# Set seed for reproducibility
 np.random.seed(42)
 
 def generate_betting_data(rows=10000):
@@ -12,7 +11,6 @@ def generate_betting_data(rows=10000):
     
     for i in range(rows):
         player_id = 1000 + i
-        # Random signup date in the last 2 years
         signup_date = current_date - timedelta(days=random.randint(30, 730))
         
         # Features that influence churn
@@ -47,7 +45,7 @@ def generate_betting_data(rows=10000):
     ]
     return pd.DataFrame(data, columns=columns)
 
-# Generate and Save
+
 df = generate_betting_data(10000)
 df.to_csv('betting_project_data.csv', index=False)
-print("Dataset created: 10,000 rows of player data saved to 'bet365_project_data.csv'")
+print("Dataset created: 10,000 rows of player data saved to 'betting_project_data.csv'")
